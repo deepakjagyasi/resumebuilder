@@ -1,0 +1,28 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "package.json",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "backbone": "^1.2.1",
+    "bootstrap": "^3.3.5",
+    "grunt-contrib-connect": "^0.11.2",
+    "underscore": "^1.8.3",
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "gr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepakjagyasi/resumebuilder.git"
+  },
+  "author": "Deepak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepakjagyasi/resumebuilder/issues"
+  },
+  "homepage": "https://github.com/deepakjagyasi/resumebuilder#readme"
+}
