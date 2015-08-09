@@ -1,23 +1,49 @@
-  // Defining the application router, you can attach sub routers here.
-  var Router = Backbone.Router.extend({
-    routes: {
-      "": "index"
-    },
+define(['backbone'], function(Backbone){
+   // Defining the application router, you can attach sub routers here.
+       Router = Backbone.Router.extend({
+         routes: {
+           "home": "home",
+           "contactus": "contactus",
+           "tips":"tips",
+           "form": "form",
+           "samples": "samples",
+           "": "index"
+         },
 
-    index: function() {
-      // Set the login page as the default for example...
-      this.page.set({
-        title: "My Login Screen!",
+         index: function() {
+            $('.form-area').load('js/home/home.html');
+         },
 
-        // Put the login page into the layout.
-        view: new Auth.Views.Login()
-      });
-    },
+         home: function() {
+           $('.form-area').load('js/home/home.html');
+         },
 
-    initialize: function() {
-      // Create a blank new Page.
-      this.page = new Page();
-    }
-  });
+         contactus: function() {
+          $('.form-area').load('js/contactus/contactus.html');
+         },
 
-  return Router;
+         tips: function () {
+            $('.form-area').load('js/tips/tips.html');
+         },
+
+         samples: function() {
+            $('.form-area').load('js/samples/samples.html');
+         },
+
+         form: function() {
+            $('.form-area').load('js/form/form.html');
+         },
+
+         initialize: function() {
+
+         }
+
+       });
+
+       return {
+         appRouter: new Router(),
+         init: function() {
+           Backbone.history.start();
+         }
+       }
+ });

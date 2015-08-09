@@ -1,18 +1,17 @@
 $(function(){
 
-	// The main view of the application
-	var App = Backbone.View.extend({
-
-		initialize: function(){
-			this.loadHome();
+	require.config({
+		paths: {
+			'jquery': 'node_modules/jquery/dist/jquery.min.js',
+			'backbone' : 'node_modules/backbone/backbone-min',
+			'underscore' : 'node_modules//underscore/underscore-min'
 		},
-
-		loadHome: function() {
-			$('.form-area').load('js/home/home.html');
-		}
-
+		baseUrl:'../../'
 	});
 
-	new App();
-
+	require(['assets/app/js/router'], function(router) {
+		$(document).ready(function(){
+			router.init();
+		});
+	});
 });
