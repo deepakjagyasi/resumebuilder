@@ -76,7 +76,7 @@ $(function(){
 	var App = Backbone.View.extend({
 
 		// Base the view on an existing element
-		el: $('#main'),
+		el: $('.form-area'),
 
 		initialize: function(){
 

@@ -7,7 +7,7 @@ define(['backbone', 'jquery', 'bootstrap'], function(Backbone, $, bootstrap){
            "tips":"tips",
            "form": "form",
            "samples": "samples",
-           "": "index"
+           '': 'loadPage'
          },
 
          index: function() {
@@ -40,6 +40,13 @@ define(['backbone', 'jquery', 'bootstrap'], function(Backbone, $, bootstrap){
          form: function() {
             $('#form').tab('show');
             $('.form-area').load('js/form/form.html');
+         },
+
+         loadPage: function(page) {
+             page = page || 'login';
+             require(['assets/app/js/' +page + '/' + page + 'View'], function(pageView) {
+                 pageView.render();
+             });
          }
 
        });
