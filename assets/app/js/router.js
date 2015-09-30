@@ -1,5 +1,5 @@
 define(['backbone', 'jquery', 'bootstrap'], function(Backbone, $, bootstrap){
-   // Defining the application router, you can attach sub routers here.
+
        Router = Backbone.Router.extend({
          routes: {
            "home": "home",
@@ -22,7 +22,9 @@ define(['backbone', 'jquery', 'bootstrap'], function(Backbone, $, bootstrap){
 
          contactus: function() {
             $('#contactus').tab('show');
-            $('.form-area').load('js/contactus/contactus.html');
+            require(['assets/app/js/contactus/contactusView'], function(pageView) {
+                pageView.render();
+            });
          },
 
          tips: function () {
@@ -38,10 +40,6 @@ define(['backbone', 'jquery', 'bootstrap'], function(Backbone, $, bootstrap){
          form: function() {
             $('#form').tab('show');
             $('.form-area').load('js/form/form.html');
-         },
-
-         initialize: function() {
-
          }
 
        });
